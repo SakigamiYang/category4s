@@ -3,7 +3,7 @@ package me.sakigamiyang.category4s.data.kleisli
 import me.sakigamiyang.category4s.types.monad.Monad
 import me.sakigamiyang.category4s.{K1, K2, K3}
 
-final class Kleisli[F, A, B](val m: Monad[F], val run: A => K1[F, B]) extends K3[Kleisli.T, F, A, B] {
+class Kleisli[F, A, B](val m: Monad[F], val run: A => K1[F, B]) extends K3[Kleisli.T, F, A, B] {
   private def arrow(): KleisliArrow[F] = new KleisliArrow[F] {
     override val monad: Monad[F] = m
   }
