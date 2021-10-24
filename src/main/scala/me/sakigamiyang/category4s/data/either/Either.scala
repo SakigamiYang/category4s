@@ -29,7 +29,7 @@ sealed abstract class Either[L, R] extends K2[Either.T, L, R] {
 }
 
 object Either {
-  type T
+  class T
 
   final case class Left[L, R](value: L) extends Either[L, R]
 
